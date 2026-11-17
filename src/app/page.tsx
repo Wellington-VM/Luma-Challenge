@@ -122,15 +122,16 @@ export default function Home() {
                   fill
                   sizes="(min-width: 768px) 480px, 100vw"
                   className="object-cover"
+                  loading="eager"
                 />
               </div>
 
-              <div className="absolute -left-2 top-4 flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-sm shadow-lg md:-left-5">
+              <div className="absolute -left-2 top-1 flex items-center gap-3 rounded-xl bg-white px-4 py-2 text-sm shadow-lg md:top-4 md:py-3 md:-left-5">
                 <span className="rounded-md bg-lavender px-2 py-1 font-bold text-brand">120+</span>
                 <p>expert-led courses</p>
               </div>
 
-              <div className="absolute bottom-4 right-2 flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm shadow-lg md:bottom-8 md:-right-14">
+              <div className="absolute bottom-4 right-2 flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm shadow-lg md:py-3 md:bottom-8 md:-right-14">
                 <Image src="/Estrela.svg" height={100} width={90} alt="estrela" style={{ width: "auto", height: "auto" }}></Image>
                 <p>4.9 avg rating</p>
               </div>

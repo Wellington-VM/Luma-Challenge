@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luma: Front-End Coding Challenge
 
-## Getting Started
+Responsive landing page built for the Buzzvel Front-End Engineer coding challenge (November 2026),
+based on the supplied Figma design.
 
-First, run the development server:
+**Stack:** Next.js (App Router), TypeScript, Tailwind CSS.
+
+## Getting started
+
+Requirements: Node.js (LTS) and npm.
 
 ```bash
+git clone https://github.com/Wellington-VM/Luma-Challenge.git
+cd Luma-Challenge
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint     # lint the project
+npm run build    # production build
+npm run start    # serve the production build
+```
 
-## Learn More
+`npm run lint` and `npm run build` pass with no errors or warnings.
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+public/          Images and SVG assets
+src/app/         Page, layout and global styles
+src/components/  Reusable components with typed props
+src/mocks/       Local mock data
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Key decisions
 
-## Deploy on Vercel
+- **Design fidelity:** typography, colors, spacing and images follow the Figma design. Colors and fonts
+  are defined once as theme tokens.
+- **Responsive:** built mobile first and checked from the smallest to the largest screen sizes, following
+  the mobile and desktop Figma frames.
+- **Components:** repeated content (cards, steps, stats, links) is data-driven from mock data. Only
+  `MobileMenu` and `ContactForm` are client components, because they need state.
+- **Accessibility:** semantic HTML, labelled form fields, descriptive `alt` text (empty for decorative
+  images), visible keyboard focus, and a mobile menu with `aria-expanded` that closes with Esc.
+- **Performance:** images use `next/image`, and `priority` is applied only to the hero image.
+- **Design width:** the Figma desktop frame is 1280px wide. I kept its proportions on purpose to stay
+  faithful to the design.
+- **Animations:** no decorative animations, only hover and focus transitions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Known gaps
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- There is no backend or CMS. The contact form validates the fields, clears them and shows a
+  confirmation message.
+- Links without a matching section in the design (e.g. "Careers", "Terms") are placeholders, since the
+  Figma is a static prototype.
+- The three steps in "How Luma works" all read "STEP 01" in the Figma. I numbered them 01, 02 and 03.
+- Photographs are stored in PNG format to preserve visual quality, while SVG is used for logos and icons.
+
+## Time spent
+
+Approximately three days: the first for planning and setting up the environment, the rest for building,
+testing and refining the page.
+
+## AI tools
+
+I used Claude (Anthropic) as a learning and review assistant, since I had not used Next.js, TypeScript
+or Tailwind before. It helped me understand concepts, review code, fix bugs and refine responsive
+layouts. I wrote the page structure myself and reviewed every suggestion before using it. I checked the
+result against the Figma Inspect panel, in browser DevTools on small and large screens, and by running
+`npm run lint` and `npm run build`. I reviewed the implementation and can explain the main technical decisions and code structure.
