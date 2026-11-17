@@ -74,3 +74,5 @@ or Tailwind before. It helped me understand concepts, review code, fix bugs and 
 layouts. I wrote the page structure myself and reviewed every suggestion before using it. I checked the
 result against the Figma Inspect panel, in browser DevTools on small and large screens, and by running
 `npm run lint` and `npm run build`. I reviewed the implementation and can explain the main technical decisions and code structure.
+
+**Live preview:** https://luma-challenge-sandy.vercel.app/
