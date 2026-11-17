@@ -47,7 +47,8 @@ src/mocks/       Local mock data
   `MobileMenu` and `ContactForm` are client components, because they need state.
 - **Accessibility:** semantic HTML, labelled form fields, descriptive `alt` text (empty for decorative
   images), visible keyboard focus, and a mobile menu with `aria-expanded` that closes with Esc.
-- **Performance:** images use `next/image`, and `priority` is applied only to the hero image.
+- **Performance:** Images use `next/image` with responsive `sizes`, `priority` is reserved strictly for
+  the header brand logo to avoid unused preload warnings.
 - **Design width:** the Figma desktop frame is 1280px wide. I kept its proportions on purpose to stay
   faithful to the design.
 - **Animations:** no decorative animations, only hover and focus transitions.

@@ -122,7 +122,6 @@ export default function Home() {
                   fill
                   sizes="(min-width: 768px) 480px, 100vw"
                   className="object-cover"
-                  loading="eager"
                 />
               </div>
 
